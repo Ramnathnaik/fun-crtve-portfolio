@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { Menu, X, Sun, Moon } from "lucide-react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useTheme } from "@/contexts/ThemeContext";
 
 const menuItems = [
@@ -14,7 +14,6 @@ const menuItems = [
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
 
   // Removed auto-redirect - /gallery is now a protected authenticated page
