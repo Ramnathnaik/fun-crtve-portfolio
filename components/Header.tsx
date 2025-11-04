@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { useRouter, usePathname } from "next/navigation";
+import { useTheme } from "@/contexts/ThemeContext";
 
 const menuItems = [
   { name: "ಚಿತ್ರ ಗ್ಯಾಲರಿ", href: "/gallery" }, // Gallery
@@ -14,13 +15,9 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
 
-  useEffect(() => {
-    if (pathname === "/gallery") {
-      // Redirect to home and scroll to #photo-gallery
-      router.replace("/#photo-gallery");
-    }
-  }, [pathname, router]);
+  // Removed auto-redirect - /gallery is now a protected authenticated page
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -54,26 +51,42 @@ const Header = () => {
   };
 
   return (
-    <header className="text-black bg-white shadow-md w-full md:px-16">
+    <header className="text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-900 shadow-md w-full md:px-16 transition-colors duration-300">
       <div className="mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/">
-          <h1 className="text-xl font-bold">ಸಹಾನಾ</h1>
+          <h1 className="text-xl font-bold">ಸಹನಾ</h1>
         </Link>
-        <button onClick={toggleMenu} className="md:hidden">
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-        <nav className="hidden md:flex gap-4">
-          {menuItems.map((item) => (
-            <button
-              key={item.name}
-              onClick={() => handleMenuClick(item.href)}
-              className="hover:underline bg-transparent border-none cursor-pointer text-inherit"
-              type="button"
-            >
-              {item.name}
-            </button>
-          ))}
-        </nav>
+        <div className="flex items-center gap-4">
+          {/* Dark mode toggle */}
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-all duration-300"
+            aria-label="Toggle theme"
+          >
+            {theme === "light" ? (
+              <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300 transition-transform duration-300 hover:rotate-12" />
+            ) : (
+              <Sun className="w-5 h-5 text-yellow-500 transition-transform duration-300 hover:rotate-12" />
+            )}
+          </button>
+
+          <button onClick={toggleMenu} className="md:hidden">
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+
+          <nav className="hidden md:flex gap-4">
+            {menuItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => handleMenuClick(item.href)}
+                className="hover:underline bg-transparent border-none cursor-pointer text-inherit transition-colors duration-200"
+                type="button"
+              >
+                {item.name}
+              </button>
+            ))}
+          </nav>
+        </div>
       </div>
       {isOpen && (
         <div className="md:hidden px-4 pb-4 space-y-2">
