@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useTheme } from "@/contexts/ThemeContext";
 
 const menuItems = [
+  { name: "ಶಿಕ್ಷಣ ಪ್ರಯಾಣ", href: "/education-journey" }, // Education Journey
   { name: "ಚಿತ್ರ ಗ್ಯಾಲರಿ", href: "/gallery" }, // Gallery
   { name: "ಗುರಿಗಳು", href: "/goals" }, // Goals
 ];
@@ -44,6 +45,9 @@ const Header = () => {
       } else {
         window.location.href = "/#goals";
       }
+    } else if (href === "/education-journey") {
+      // Direct navigation to education journey page
+      router.push(href);
     } else {
       router.push(href);
     }
