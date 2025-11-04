@@ -4,6 +4,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const photos = [
   "/images/photo1.jpg",
@@ -12,6 +13,10 @@ const photos = [
   "/images/photo4.jpg",
   "/images/photo5.jpg",
   "/images/photo6.jpg",
+  "/images/photo7.jpg",
+  "/images/photo8.jpg",
+  "/images/photo9.jpg",
+  "/images/photo10.jpg",
 ];
 
 export default function PhotoGallery() {
@@ -70,15 +75,15 @@ export default function PhotoGallery() {
   return (
     <section
       id="photo-gallery"
-      className="bg-gray-100 py-10 px-4 w-full shadow-md"
+      className="bg-gray-100 dark:bg-gray-800 py-10 px-4 w-full shadow-md transition-colors duration-300"
     >
-      <h2 className="text-xl font-bold text-yellow-600 text-center mb-5">
+      <h2 className="text-xl font-bold text-yellow-600 dark:text-yellow-400 text-center mb-5">
         ನನ್ನ ನೆನಪಿನ ಆಲ್ಬಮ್ 📸
       </h2>
       <div className="relative w-full max-w-5xl mx-auto p-4">
         <div className="flex items-center justify-between">
           <button
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow"
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 bg-white dark:bg-gray-700 rounded-full p-2 shadow"
             onClick={handlePrev}
           >
             <ChevronLeft color="gray" size={24} />
@@ -108,12 +113,21 @@ export default function PhotoGallery() {
           </div>
 
           <button
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 bg-white dark:bg-gray-700 rounded-full p-2 shadow"
             onClick={handleNext}
           >
             <ChevronRight color="gray" size={24} />
           </button>
         </div>
+      </div>
+
+      <div className="text-center mt-6">
+        <Link
+          href="/auth"
+          className="bg-yellow-500 dark:bg-yellow-600 hover:bg-yellow-600 dark:hover:bg-yellow-700 text-white font-semibold px-5 py-2 rounded-full text-sm transition-all shadow-md hover:shadow-lg"
+        >
+          ಇನ್ನಷ್ಟು ನೋಡಿ 💕
+        </Link>
       </div>
     </section>
   );
