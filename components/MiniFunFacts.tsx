@@ -12,17 +12,17 @@ export default function MiniFunFacts() {
 
   return (
     <section className="p-6 max-w-2xl mx-auto my-10 text-center">
-      <h2 className="text-xl font-bold text-yellow-600 mb-4">
+      <h2 className="text-xl font-bold text-yellow-600 dark:text-yellow-400 mb-4">
         ಚಿಕ್ಕಚಿಕ್ಕ ಜಾಣ್ಮೆಗಳು 💫
       </h2>
-      <ul className="space-y-3 text-sm text-gray-700 mb-6">
+      <ul className="space-y-3 text-sm text-gray-700 dark:text-gray-300 mb-6">
         {miniFacts.map((fact, index) => (
           <li key={index}>✨ {fact}</li>
         ))}
       </ul>
       <button
         onClick={() => router.push("/fun-facts")}
-        className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold px-5 py-2 rounded-full text-sm transition-shadow shadow-md hover:shadow-lg"
+        className="bg-yellow-500 dark:bg-yellow-600 hover:bg-yellow-600 dark:hover:bg-yellow-700 text-white font-semibold px-5 py-2 rounded-full text-sm transition-all shadow-md hover:shadow-lg"
       >
         ಇನ್ನೂ ಫನ್ ಫ್ಯಾಕ್ಟ್ಸ್ ಬೇಕಾ? 🤗
       </button>

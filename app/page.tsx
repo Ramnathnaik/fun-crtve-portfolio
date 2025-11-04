@@ -7,7 +7,7 @@ import PhotoGallery from "@/components/PhotoGallery";
 
 export default function Home() {
   return (
-    <main className="flex bg-white min-h-screen flex-col items-center justify-between">
+    <main className="flex bg-white dark:bg-gray-900 min-h-screen flex-col items-center justify-between transition-colors duration-300">
       <Hero />
       <AboutSection />
       <MiniFunFacts />
