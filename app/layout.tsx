@@ -11,7 +11,7 @@ const notoSansKannada = Noto_Sans_Kannada({
 });
 
 export const metadata: Metadata = {
-  title: "ಸಹಾನಾ - Sahana",
+  title: "ಸಹನಾ❤️",
   description: "A special portfolio for Sahana",
 };
 
@@ -38,7 +38,7 @@ export default function RootLayout({
       </head>
       <body
         className={`${notoSansKannada.variable} font-sans antialiased transition-colors duration-300`}
-        style={{ fontFamily: 'var(--font-noto-sans-kannada)' }}
+        style={{ fontFamily: "var(--font-noto-sans-kannada)" }}
       >
         <ClientLayout>{children}</ClientLayout>
       </body>

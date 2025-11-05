@@ -57,7 +57,7 @@ const Header = () => {
     <header className="text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-900 shadow-md w-full md:px-16 transition-colors duration-300">
       <div className="mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/">
-          <h1 className="text-xl font-bold">ಸಹನಾ</h1>
+          <h1 className="text-xl font-bold">ಸಹನಾ❤️</h1>
         </Link>
         <div className="flex items-center gap-4">
           {/* Dark mode toggle */}

@@ -44,7 +44,7 @@ const journeySteps: JourneyStep[] = [
   },
   {
     year: 2020,
-    place: "ಇದುಜುಂಜಿ",
+    place: "ಇಡಗುಂಜಿ",
     level: "ಪಿ.ಯು. ಕಾಲೇಜು",
     description: "ಹೊಸ ಸವಾಲುಗಳನ್ನು ಎದುರಿಸುವ ಸಿದ್ಧತೆ!",
     icon: "🎓",
@@ -63,7 +63,7 @@ const journeySteps: JourneyStep[] = [
   {
     year: 2025,
     place: "ಕುಮಟಾ",
-    level: "ಎಮ್.ಎ (ಕನ್ನಡ)",
+    level: "ಬಿ.ಎಡ್ (ಕನ್ನಡ)",
     description: "ಮುಂಬರುವ ಸಾಧನೆಗಳ ಮುಂಗಡ!",
     icon: "🏆",
     color: "from-pink-400 to-rose-500",
@@ -108,18 +108,26 @@ export default function EducationJourney() {
       {isMounted && (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(20)].map((_, i) => {
-            const randomX = Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000);
-            const randomEndX = Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000);
+            const randomX =
+              Math.random() *
+              (typeof window !== "undefined" ? window.innerWidth : 1000);
+            const randomEndX =
+              Math.random() *
+              (typeof window !== "undefined" ? window.innerWidth : 1000);
             const randomDuration = Math.random() * 10 + 10;
-            const randomIcon = ["📖", "✏️", "🎒", "⭐", "🌟"][Math.floor(Math.random() * 5)];
-            
+            const randomIcon = ["📖", "✏️", "🎒", "⭐", "🌟"][
+              Math.floor(Math.random() * 5)
+            ];
+
             return (
               <motion.div
                 key={i}
                 className="absolute text-4xl opacity-20"
                 initial={{ y: -100, x: randomX }}
                 animate={{
-                  y: (typeof window !== 'undefined' ? window.innerHeight : 800) + 100,
+                  y:
+                    (typeof window !== "undefined" ? window.innerHeight : 800) +
+                    100,
                   x: randomEndX,
                 }}
                 transition={{
@@ -139,9 +147,11 @@ export default function EducationJourney() {
       {showConfetti && isMounted && (
         <div className="fixed inset-0 pointer-events-none z-50">
           {[...Array(50)].map((_, i) => {
-            const randomX = Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000);
+            const randomX =
+              Math.random() *
+              (typeof window !== "undefined" ? window.innerWidth : 1000);
             const randomDuration = Math.random() * 2 + 2;
-            
+
             return (
               <motion.div
                 key={i}
@@ -152,7 +162,9 @@ export default function EducationJourney() {
                   rotate: 0,
                 }}
                 animate={{
-                  y: (typeof window !== 'undefined' ? window.innerHeight : 800) + 50,
+                  y:
+                    (typeof window !== "undefined" ? window.innerHeight : 800) +
+                    50,
                   rotate: 360,
                 }}
                 transition={{

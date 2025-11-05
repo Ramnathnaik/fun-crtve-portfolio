@@ -14,7 +14,7 @@ export const portfolioInfo = {
     photo: "/public/sahana.jpg",
   },
   kn: {
-    name: "ಸಹಾನಾ",
+    name: "ಸಹನಾ",
     alternateName: "ಧನ್ಯಾ",
     nickname: "ಸನಾ",
     birthPlace: "ಹಿನ್ನೂರು, ಕರ್ನಾಟಕ",

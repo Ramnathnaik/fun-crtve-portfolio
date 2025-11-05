@@ -8,12 +8,12 @@ export default function FunFacts() {
   ];
 
   return (
-    <section className="bg-white h-screen py-10 px-4">
-      <section className="bg-gray-100 py-10 px-6 rounded-xl shadow-md max-w-4xl mx-auto">
-        <h2 className="text-xl font-bold text-center text-yellow-600 mb-6">
+    <section className="bg-white dark:bg-gray-900 h-screen py-10 px-4 transition-colors duration-300">
+      <section className="bg-gray-100 dark:bg-gray-800 py-10 px-6 rounded-xl shadow-md max-w-4xl mx-auto transition-colors duration-300">
+        <h2 className="text-xl font-bold text-center text-yellow-600 dark:text-yellow-400 mb-6">
           ಮಜೆಯ ಫ್ಯಾಕ್ಟ್ಸ್ 😄
         </h2>
-        <ul className="space-y-4 text-sm text-gray-800 list-disc text-center list-inside">
+        <ul className="space-y-4 text-sm text-gray-800 dark:text-gray-200 list-disc text-center list-inside">
           {facts.map((fact, index) => (
             <p key={index}>{fact}</p>
           ))}
